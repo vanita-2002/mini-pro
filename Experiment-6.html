@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Online Tshirts Shop</title>
+    <script
+      src="https://kit.fontawesome.com/f635a28c1e.js"
+      crossorigin="anonymous"
+    ></script>
+   <link rel="stylesheet" href="Experiment-3.css">
+  </head>
+  
+  <body>
+    <div id="myModal" class="Receipt">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Your Receipt <span id="date"></span></h2>
+        <br />
+        Tagline: <b><span id="tgline"></span></b> <br />
+        Size: <b><span id="siz"></span></b> <br />
+        Quantity: <b><span id="qty"></span></b> <br />
+        Total Price: <b>$<span id="price"></span></b> <br />
+        <br />
+        Delivered to: <span id="addr"></span>
+      </div>
+    </div>
+    <form action="#" onsubmit="generateReceipt();return false;">
+      <h3>Your Cart</h3>
+      <div class="cart">
+        <div class="form-data">
+          <label for="tagline">Enter Name:</label>
+          <input
+            type="text"
+            name="tagline"
+            id="tagline"
+            oninput="validateTagline(this.value);"
+          />
+          <br />
+          
+          
+          <label for="quantity">Quantity: </label>
+          <select id="quantity" name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <br />
+       
+          <div>
+            <label for="phone">Contact Number:</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              oninput="validatePhone(this.value);"
+            />
+            <span id="phone-error" style="color: red"></span>
+          </div>
+          <div>
+            <label for="emailId">Email ID:</label>
+            <input
+              type="text"
+              name="emailId"
+              id="emailId"
+              oninput="validateEmail(this.value);"
+            />
+            <span id="email-error" style="color: red"></span>
+          </div>
+          <label for="address">Address:</label>
+          <input type="text" id="address" size="70" /> <br />
+          <input class="btn" type="submit" />
+        </div>
+        
+      </div>
+    </form>
+    <script src="Experiment-3.js"></script>
+  </body>
+</html>
